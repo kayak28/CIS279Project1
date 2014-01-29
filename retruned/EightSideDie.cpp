@@ -65,7 +65,18 @@ EightSideDie EightSideDie::addAll(const EightSideDie& aDie1, const EightSideDie&
 	{
 		added.counts[index] = aDie1.counts[index]+aDie2.counts[index];
 	}
-
+	if(aDie1.recentFace < aDie2.recentFace)
+	{
+		added.recentFace = aDie2.recentFace;
+	}
+	else if(aDie1.recentFace > aDie2.recentFace)
+	{
+		added.recentFace = aDie1.recentFace;
+	}
+	else
+	{
+		added.recentFace = aDie1.recentFace;
+	}
 	return added;
 }
 
